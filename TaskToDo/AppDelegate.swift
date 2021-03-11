@@ -18,6 +18,7 @@ var window: UIWindow?
         
         return true
     }
+    
     func applicationWillTerminate(_ application: UIApplication) {
         self.saveContext()
     }

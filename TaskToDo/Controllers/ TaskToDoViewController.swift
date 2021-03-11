@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class TaskToDoViewController: UITableViewController {
     
@@ -45,15 +46,17 @@ class TaskToDoViewController: UITableViewController {
     
     //MARK - TableView Delegate Methods
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //print(itemArray[indexPath.row])
+        
+        //delete item
+//        context.delete(itemArray[indexPath.row])
+//        itemArray.remove(at: indexPath.row)
         
         itemArray[indexPath.row].done = !itemArray[indexPath.row].done
-         
         saveItems()
         
         tableView.deselectRow(at: indexPath, animated: true)
-        
     }
+    
     //MARK - Add New Item
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         
@@ -62,7 +65,6 @@ class TaskToDoViewController: UITableViewController {
         let alert = UIAlertController(title: "Add New Task", message: "", preferredStyle: .alert)
         
         let action = UIAlertAction(title: "Add Item", style: .default) { (action) in
-            //what will happend once the user cliks the add
             
             let newItem = Item(context: self.context)
             newItem.title = textField.text!
@@ -95,7 +97,13 @@ class TaskToDoViewController: UITableViewController {
     }
     
     func loadItems() {
-      
+        let request : NSFetchRequest<Item> = Item.fetchRequest()
+        do {
+            itemArray = try context.fetch(request)
+        } catch {
+            print("Error fetching data from context \(error)")
+        }
+        
     }
 }
 

@@ -11,7 +11,7 @@ import CoreData
 
 class CategoryViewController: UITableViewController {
 
-    var categoryArray = [Category]()
+    var categories = [Category]()
     
      let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -27,16 +27,28 @@ class CategoryViewController: UITableViewController {
     //MARK: - TableView Datasource Methods
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categoryArray.count
+        return categories.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath)
                
-        cell.textLabel?.text = categoryArray[indexPath.row].name
+        cell.textLabel?.text = categories[indexPath.row].name
                
                return cell
+    }
+    //MARK: - TableView Delegate Methods
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "goToItems", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! TaskToDoViewController
+        
+        if let indexPath = tableView.indexPathForSelectedRow {
+            destinationVC.selectedCategory = categories[indexPath.row]
+        }
     }
     
     
@@ -52,7 +64,7 @@ class CategoryViewController: UITableViewController {
             
             let newCategory = Category(context: self.context)
             newCategory.name = textField.text!
-            self.categoryArray.append(newCategory)
+            self.categories.append(newCategory)
             
             self.saveCategory()
            
@@ -85,20 +97,12 @@ class CategoryViewController: UITableViewController {
       func loadCategory() {
         let request : NSFetchRequest<Category> = Category.fetchRequest()
         do {
-            categoryArray = try context.fetch(request)
+            categories = try context.fetch(request)
         } catch {
             print("Error fetching data from context \(error)")
         }
         
         tableView.reloadData()
     }
-
-
-    
-   
-    
-    //MARK: - TableView Delegate Methods
-    
-    
     
 }

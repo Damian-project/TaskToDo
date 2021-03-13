@@ -24,7 +24,7 @@ class TaskToDoViewController: UITableViewController {
 
     }
     
-    //MARK - Tableview Datasource Moethods
+    //MARK: - Tableview Datasource Moethods
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemArray.count
     }
@@ -44,7 +44,7 @@ class TaskToDoViewController: UITableViewController {
         return cell
     }
     
-    //MARK - TableView Delegate Methods
+    //MARK: - TableView Delegate Methods
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         //delete item
@@ -57,7 +57,7 @@ class TaskToDoViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    //MARK - Add New Item
+    //MARK: - Add New Item
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         
         var textField = UITextField()
@@ -85,7 +85,7 @@ class TaskToDoViewController: UITableViewController {
         
         present(alert, animated: true, completion: nil)
     }
-    
+    //MARK: - Model Manipulation Methods
     func saveItems() {
         
         do {

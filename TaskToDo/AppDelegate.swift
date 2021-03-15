@@ -22,10 +22,6 @@ var window: UIWindow?
     func applicationWillTerminate(_ application: UIApplication) {
         self.saveContext()
     }
-<<<<<<< .merge_file_ZhpQRV
-    
-=======
->>>>>>> .merge_file_8qGmhB
   // MARK: - Core Data stack
 
      lazy var persistentContainer: NSPersistentCloudKitContainer = {

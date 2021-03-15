@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+<<<<<<< .merge_file_SXTA1x
 		4F24F03D25F38BD60096F118 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4F24F03B25F38BD60096F118 /* DataModel.xcdatamodeld */; };
 		4F2B426825F23AFC004F6D51 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2B426725F23AFC004F6D51 /* Item.swift */; };
+=======
+		4F215D5625F394B400E6BB1C /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4F215D5425F394B400E6BB1C /* DataModel.xcdatamodeld */; };
+		4F75A89225FCD2D600968A88 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F75A89125FCD2D600968A88 /* CategoryViewController.swift */; };
+>>>>>>> .merge_file_apUtVc
 		4F98202525D979E100C10698 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F98202425D979E100C10698 /* AppDelegate.swift */; };
 		4F98202925D979E100C10698 /*  TaskToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F98202825D979E100C10698 /*  TaskToDoViewController.swift */; };
 		4F98202C25D979E100C10698 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F98202A25D979E100C10698 /* Main.storyboard */; };
@@ -17,8 +22,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+<<<<<<< .merge_file_SXTA1x
 		4F24F03C25F38BD60096F118 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		4F2B426725F23AFC004F6D51 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+=======
+		4F215D5525F394B400E6BB1C /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		4F75A89125FCD2D600968A88 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+>>>>>>> .merge_file_apUtVc
 		4F98202125D979E100C10698 /* TaskToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F98202425D979E100C10698 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F98202825D979E100C10698 /*  TaskToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " TaskToDoViewController.swift"; sourceTree = "<group>"; };
@@ -50,6 +60,7 @@
 		4F2B426A25F23B2B004F6D51 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4F75A89125FCD2D600968A88 /* CategoryViewController.swift */,
 				4F98202825D979E100C10698 /*  TaskToDoViewController.swift */,
 			);
 			path = Controllers;
@@ -58,8 +69,12 @@
 		4F2B426B25F23B38004F6D51 /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< .merge_file_SXTA1x
 				4F24F03B25F38BD60096F118 /* DataModel.xcdatamodeld */,
 				4F2B426725F23AFC004F6D51 /* Item.swift */,
+=======
+				4F215D5425F394B400E6BB1C /* DataModel.xcdatamodeld */,
+>>>>>>> .merge_file_apUtVc
 			);
 			path = "Data Model";
 			sourceTree = "<group>";
@@ -173,9 +188,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F75A89225FCD2D600968A88 /* CategoryViewController.swift in Sources */,
 				4F98202925D979E100C10698 /*  TaskToDoViewController.swift in Sources */,
+<<<<<<< .merge_file_SXTA1x
 				4F24F03D25F38BD60096F118 /* DataModel.xcdatamodeld in Sources */,
 				4F2B426825F23AFC004F6D51 /* Item.swift in Sources */,
+=======
+				4F215D5625F394B400E6BB1C /* DataModel.xcdatamodeld in Sources */,
+>>>>>>> .merge_file_apUtVc
 				4F98202525D979E100C10698 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -374,12 +394,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
+<<<<<<< .merge_file_SXTA1x
 		4F24F03B25F38BD60096F118 /* DataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				4F24F03C25F38BD60096F118 /* DataModel.xcdatamodel */,
 			);
 			currentVersion = 4F24F03C25F38BD60096F118 /* DataModel.xcdatamodel */;
+=======
+		4F215D5425F394B400E6BB1C /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4F215D5525F394B400E6BB1C /* DataModel.xcdatamodel */,
+			);
+			currentVersion = 4F215D5525F394B400E6BB1C /* DataModel.xcdatamodel */;
+>>>>>>> .merge_file_apUtVc
 			path = DataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

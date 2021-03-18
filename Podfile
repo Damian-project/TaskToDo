@@ -8,5 +8,6 @@ target 'TaskToDo' do
   # Pods for TaskToDo
 
 pod 'RealmSwift'
+pod 'RevealingSplashView'
 
 end

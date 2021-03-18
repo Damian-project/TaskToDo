@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import RevealingSplashView
 
 class CategoryViewController: UITableViewController {
     
@@ -15,12 +16,24 @@ class CategoryViewController: UITableViewController {
 
     var categories = [Category]()
     
-     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
+    @IBOutlet var Animation: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+            
+        //MARK: - animation loading
+        let splashView = RevealingSplashView(iconImage: UIImage(named: "logo-TaskToDo")!, iconInitialSize: CGSize(width: 300, height: 300), backgroundImage: UIImage(named: "background")!)
+        
+        splashView.animationType = SplashAnimationType.squeezeAndZoomOut
+        self.navigationController?.view.addSubview(splashView)
+  
+        splashView.startAnimation(){
+            print("Completed")
+            
+        }
 //        print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
         
         //loadCategory()

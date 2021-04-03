@@ -71,14 +71,21 @@ class TaskToDoViewController: UITableViewController {
         let alert = UIAlertController(title: "Add New Task", message: "", preferredStyle: .alert)
         
         let action = UIAlertAction(title: "Add Item", style: .default) { (action) in
-//
-//            let newItem = Item(context: self.context)
-//            newItem.title = textField.text!
-//            newItem.done = false
-//            newItem.parentCategory = self.selectedCategory
-//            self.itemArray.append(newItem)
-//            self.saveItems()
-//
+            
+            if let currentCategory = self.selectedCategory {
+                do {
+                    try self.realm.write {
+                        let newItem = Item()
+                        newItem.title = textField.text!
+                        currentCategory.items.append(newItem)
+                    }
+                } catch {
+                    print("Error saving new items, \(error)")
+                }
+            }
+            
+            self.tableView.reloadData()
+
         }
         
         alert.addTextField { (alertTextField) in
@@ -96,7 +103,7 @@ class TaskToDoViewController: UITableViewController {
     
     func loadItems() {
         
-        itemArray = selectedCategory?.items.sorted(byKeyPath: "title", ascending: true)
+        todoItems = selectedCategory?.items.sorted(byKeyPath: "title", ascending: true)
         
         tableView.reloadData()
     }

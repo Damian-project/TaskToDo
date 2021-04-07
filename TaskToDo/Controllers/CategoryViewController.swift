@@ -9,6 +9,7 @@
 import UIKit
 import RealmSwift
 import RevealingSplashView
+import ChameleonFramework
 
 
 class CategoryViewController: SwipeTableViewController {
@@ -23,7 +24,7 @@ class CategoryViewController: SwipeTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        tableView.separatorStyle = .none
             
         //MARK: - animation loading
         let splashView = RevealingSplashView(iconImage: UIImage(named: "logo-TaskToDo")!, iconInitialSize: CGSize(width: 300, height: 300), backgroundImage: UIImage(named: "background")!)
@@ -53,6 +54,8 @@ class CategoryViewController: SwipeTableViewController {
         let cell = super.tableView(tableView, cellForRowAt: indexPath)
                
         cell.textLabel?.text = categories?[indexPath.row].name ?? "No Categories Added Yet"
+        
+        cell.backgroundColor = UIColor(hexString: categories?[indexPath.row].color ?? "5E5CE6") 
         
         return cell
     }
@@ -84,6 +87,7 @@ class CategoryViewController: SwipeTableViewController {
             
             let newCategory = Category()
             newCategory.name = textField.text!
+            newCategory.color = UIColor.randomFlat().hexValue()
             
             self.save(category: newCategory)
            

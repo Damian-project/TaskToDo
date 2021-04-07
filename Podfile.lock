@@ -5,22 +5,26 @@ PODS:
   - RealmSwift (10.7.2):
     - Realm (= 10.7.2)
   - RevealingSplashView (0.6.0)
+  - SwipeCellKit (2.7.1)
 
 DEPENDENCIES:
   - RealmSwift
   - RevealingSplashView
+  - SwipeCellKit
 
 SPEC REPOS:
   trunk:
     - Realm
     - RealmSwift
     - RevealingSplashView
+    - SwipeCellKit
 
 SPEC CHECKSUMS:
   Realm: e523da9ade306c5ae87e85dc09fdef148d3e1cc1
   RealmSwift: 4f6758c3adbdcc87f7b7777107226532a077f61c
   RevealingSplashView: 40c5a770894459736acdc95655eeba0dd30ce91c
+  SwipeCellKit: 3972254a826da74609926daf59b08d6c72e619ea
 
-PODFILE CHECKSUM: db94926ad301c4dbc5be683dc41d24a3fae7fe26
+PODFILE CHECKSUM: 96e7610e18919c835b9406a3a3e77f514feb8631
 
 COCOAPODS: 1.10.0

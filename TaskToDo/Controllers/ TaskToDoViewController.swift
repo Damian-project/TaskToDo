@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class TaskToDoViewController: UITableViewController {
+class TaskToDoViewController: SwipeTableViewController {
     
     var todoItems: Results<Item>?
     let realm = try! Realm()
@@ -34,8 +34,9 @@ class TaskToDoViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TaskToDoItemCell", for: indexPath)
         
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
+                     
         if let item = todoItems?[indexPath.row] {
             
             cell.textLabel?.text = item.title
@@ -113,6 +114,18 @@ class TaskToDoViewController: UITableViewController {
         
         tableView.reloadData() 
     }
+    //MARK:- Delete Data From Swipe
+    override func updateModel(at indexPath: IndexPath) {
+        if let item = self.todoItems?[indexPath.row] {
+            do {
+                try self.realm.write {
+                    self.realm.delete(item)
+                }
+            } catch {
+                print("Error deleting category \(error)")
+            }
+        }
+    }
 }
 
 //MARK: - Search bar methods
@@ -137,3 +150,5 @@ extension TaskToDoViewController: UISearchBarDelegate {
         }
     }
 }
+
+

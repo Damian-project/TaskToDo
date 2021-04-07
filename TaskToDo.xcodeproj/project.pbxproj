@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F4E9EF3261DC5C900E41D9C /* SwipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4E9EF2261DC5C900E41D9C /* SwipeTableViewController.swift */; };
 		4F75A89225FCD2D600968A88 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F75A89125FCD2D600968A88 /* CategoryViewController.swift */; };
 		4F98202525D979E100C10698 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F98202425D979E100C10698 /* AppDelegate.swift */; };
 		4F98202925D979E100C10698 /*  TaskToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F98202825D979E100C10698 /*  TaskToDoViewController.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		33A5B2DAA5B294A22EFB1183 /* Pods_TaskToDo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TaskToDo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F4E9EF2261DC5C900E41D9C /* SwipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTableViewController.swift; sourceTree = "<group>"; };
 		4F75A89125FCD2D600968A88 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		4F98202125D979E100C10698 /* TaskToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F98202425D979E100C10698 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 			children = (
 				4F75A89125FCD2D600968A88 /* CategoryViewController.swift */,
 				4F98202825D979E100C10698 /*  TaskToDoViewController.swift */,
+				4F4E9EF2261DC5C900E41D9C /* SwipeTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				4FEA60702603916F00732731 /* Category.swift in Sources */,
 				4F98202925D979E100C10698 /*  TaskToDoViewController.swift in Sources */,
 				4FEA60722603917500732731 /* Item.swift in Sources */,
+				4F4E9EF3261DC5C900E41D9C /* SwipeTableViewController.swift in Sources */,
 				4F98202525D979E100C10698 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

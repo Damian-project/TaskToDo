@@ -9,5 +9,6 @@ target 'TaskToDo' do
 
 pod 'RealmSwift'
 pod 'RevealingSplashView'
+pod 'SwipeCellKit'
 
 end

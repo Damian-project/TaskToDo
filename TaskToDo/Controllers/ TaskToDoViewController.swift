@@ -15,6 +15,8 @@ class TaskToDoViewController: SwipeTableViewController {
     var todoItems: Results<Item>?
     let realm = try! Realm()
     
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     var selectedCategory : Category? {
         didSet{
            loadItems()
@@ -25,8 +27,27 @@ class TaskToDoViewController: SwipeTableViewController {
         super.viewDidLoad()
         
         tableView.separatorStyle = .none
-//        print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if let  colourHex = selectedCategory?.colour {
+            
+            title = selectedCategory!.name
+            
+            guard let navBar = navigationController?.navigationBar else {fatalError("Navigation controller does not exist.")}
+            
+            if let navBarColour = UIColor(hexString: colourHex) {
+                
+                navBar.barTintColor = navBarColour
+                
+                navBar.tintColor = ContrastColorOf(navBarColour, returnFlat: true)
+                
+                searchBar.tintColor = navBarColour
+                
+                navBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : ContrastColorOf(navBarColour, returnFlat: true)]
+            }
+        }
     }
     
     //MARK: - Tableview Datasource Moethods
@@ -43,7 +64,7 @@ class TaskToDoViewController: SwipeTableViewController {
             
             cell.textLabel?.text = item.title
             
-            if let colour = UIColor(hexString: selectedCategory!.color)?.darken(byPercentage: CGFloat(indexPath.row) / CGFloat(todoItems!.count)) {
+            if let colour = UIColor(hexString: selectedCategory!.colour)?.darken(byPercentage: CGFloat(indexPath.row) / (CGFloat(todoItems!.count) * 2.0)) {
                 cell.backgroundColor = colour
                 cell.textLabel?.textColor = ContrastColorOf(colour, returnFlat: true)
             }
